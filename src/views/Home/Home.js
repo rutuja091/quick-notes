@@ -3,7 +3,8 @@ import "./Home.css"
 import ImgSecure from "./secure.png"
 import ImgLike from "./like.png"
 import ImgBrain from "./brain.png"
-import FeatureCard from '../../components/FeatureCard/FeatureCard'
+import FeatureCard from '../../components/FeatureCard/FeatureCard';
+import { Link } from 'react-router-dom'
 
 const FEATURES = [
   {
@@ -35,25 +36,30 @@ function Home() {
 
         <div className='features-container'>
 
-{
-FEATURES.map((feature)=>{
-  const {featureImg,featureText}=feature;
-  return(
-    <FeatureCard
-    featureImg={featureImg}
-    featureText={featureText} />
-  );
-})
-}
-         
+          {
+            FEATURES.map((feature) => {
+              const { featureImg, featureText } = feature;
+              return (
+                <FeatureCard
+                  featureImg={featureImg}
+                  featureText={featureText} />
+              );
+            })
+          }
 
-         
+
+
         </div>
 
       </div>
       <div className="buttons-container">
-        <button className=' btn btn-primary'>✍️Add Notes</button>
-        <button className=' btn btn-secondary'>📖View Notes</button>
+        <Link to="/add">
+          <button className=' btn btn-primary'>✍️Add Notes</button>
+        </Link>
+        <Link to="./show">
+          <button className=' btn btn-secondary'>📖Show Notes</button>
+        </Link>
+
       </div>
 
 
