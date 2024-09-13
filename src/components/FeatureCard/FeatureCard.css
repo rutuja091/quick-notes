@@ -1,0 +1,19 @@
+.feature-card{
+    background-color: white;
+    width:200px;
+    border-radius:20px ;
+    padding: 15px 20px;
+    box-shadow: 0 0 10px #BED1CF;
+    cursor: pointer;
+}
+.feature-text{
+    font-size: 14px;
+   
+    
+
+}
+.feature-img{
+    height:40px ;
+    display: block;
+    margin: auto;
+}
