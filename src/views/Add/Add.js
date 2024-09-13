@@ -26,7 +26,7 @@ function Add() {
     setTitle("")
     setDescription("")
     setEmoji("")
-      setCategory("")
+    setCategory("")
   };
 
   return (
@@ -56,7 +56,7 @@ function Add() {
       <select value={category}
         onChange={(e) => setCategory(e.target.value)}
         className='user-input user-input-select'>
-           <option value=" ">Select Category</option>
+        <option value=" ">Select Category</option>
         <option value="shopping">Shopping</option>
         <option value="work">Work</option>
         <option value="personal">Personal</option>
