@@ -49,12 +49,12 @@ function NoteCard({ index, title, description, category, emoji }) {
                     {description}
                 </p>
                 <NoteCategory category={category} />
-                <img src={ImgDelete}
+                <img src={ImgDelete} 
                     className='note-card-delete'
                     onClick={() => {
                         deleteNote(index);
                     }}
-                />
+                alt="dltimg"/>
             </div>
         </div>
     )
