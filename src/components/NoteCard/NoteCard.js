@@ -1,30 +1,20 @@
-import React from 'react'
-import "./NoteCard.css"
-import ImgDelete from "./delete.png"
+import React from 'react';
+import "./NoteCard.css";
+import ImgDelete from "./delete.png";
+
+// Helper function to capitalize category name
 function titleCase(str) {
     return str[0].toUpperCase() + str.slice(1);
 }
 
-function deleteNote(index) {
-    const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
-    savedNotes.splice(index, 1);  
-
- 
-    localStorage.setItem("notes", JSON.stringify(savedNotes));
-
-  
-    window.location.reload();
-}
-
 function NoteCategory({ category }) {
-
     const CATEGORY_EMOJIS = {
         "shopping": "🛍️",
         "work": "💼",
         "personal": "👨‍👩‍👧‍👦",
         "learning": "📚",
         "health": "🏋️"
-    }
+    };
 
     return (
         <div className={`note-card-category bg-${category}`}>
@@ -34,7 +24,7 @@ function NoteCategory({ category }) {
     );
 }
 
-function NoteCard({ index, title, description, category, emoji }) {
+function NoteCard({ index, title, description, category, emoji, deleteNote }) {
     return (
         <div className='note-card'>
             <div className='note-card-emoji'>
@@ -49,16 +39,15 @@ function NoteCard({ index, title, description, category, emoji }) {
                     {description}
                 </p>
                 <NoteCategory category={category} />
-                <img src={ImgDelete} 
+                <img 
+                    src={ImgDelete} 
                     className='note-card-delete'
-                    onClick={() => {
-                        deleteNote(index);
-                    }}
-                alt="dltimg"/>
+                    onClick={() => deleteNote(index)} // Use the passed delete function
+                    alt="delete-icon"
+                />
             </div>
         </div>
-    )
+    );
 }
 
-export default NoteCard
-
+export default NoteCard;
